@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from schemas.input_models import CropYieldInput, ForecastInput
+from Backend.schemas.input_models import CropYieldInput, ForecastInput
 import joblib
 import pandas as pd
 
