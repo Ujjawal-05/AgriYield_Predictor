@@ -15,9 +15,9 @@ app.add_middleware(
 )
 
 # Load models once when app starts
-with open("models/CatBoost.pkl", "rb") as f:
+with open("Backend/models/CatBoost.pkl", "rb") as f:
     model = joblib.load(f)
-with open("models/Prophet.pkl", "rb") as f:
+with open("Backend/models/Prophet.pkl", "rb") as f:
     prophet_model = joblib.load(f)
 
 @app.post("/predict_yield")
