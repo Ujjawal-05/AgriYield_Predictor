@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from Backend.schemas.input_models import CropYieldInput, ForecastInput
 import joblib
 import pandas as pd
+import os
 
 app = FastAPI(title="Crop Yield Prediction API")
 
@@ -15,10 +16,13 @@ app.add_middleware(
 )
 
 # Load models once when app starts
-with open("Backend/models/CatBoost.pkl", "rb") as f:
-    model = joblib.load(f)
-with open("Backend/models/Prophet.pkl", "rb") as f:
-    prophet_model = joblib.load(f)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+CATBOOST_MODEL_PATH = os.path.join(BASE_DIR, "models", "CatBoost.pkl")
+PROPHET_MODEL_PATH = os.path.join(BASE_DIR, "models", "Prophet.pkl")
+
+model = joblib.load(CATBOOST_MODEL_PATH)
+prophet_model = joblib.load(PROPHET_MODEL_PATH)
 
 @app.post("/predict_yield")
 def predict_yield(data: CropYieldInput):
