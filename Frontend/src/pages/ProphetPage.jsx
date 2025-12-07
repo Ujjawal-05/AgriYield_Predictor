@@ -24,7 +24,7 @@ export default function ProphetPage() {
   { name: 'Soil_pH', placeholder: 'e.g. 5-8' },
   { name: 'Temperature', placeholder: 'Temperature in °C (12-35)' },
   { name: 'Humidity', placeholder: 'Humidity in %' },
-  { name: 'Wind_Speed', placeholder: 'Wind speed in km/h (1-20)' },
+  { name: 'Wind_Speed', placeholder: 'Wind speed in km/h (1-50)' },
   { name: 'N', placeholder: 'Nitrogen value (N) (45-95)' },
   { name: 'P', placeholder: 'Phosphorus value (P) (35-75)' },
   { name: 'K', placeholder: 'Potassium value (K) (25-70)' },
