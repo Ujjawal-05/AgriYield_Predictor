@@ -70,15 +70,15 @@ export default function CatBoostPage() {
 
                             <SelectField label="Soil Type" name="Soil_Type" value={formData.Soil_Type} onChange={handleChange} options={SoilTypes}/>
 
-                            <InputField label="Soil pH" name="Soil_pH" type="number" step="0.1" value={formData.Soil_pH} onChange={handleChange} placeholder="6.0 - 8.0" />
+                            <InputField label="Soil pH" name="Soil_pH" type="number" step="0.1" value={formData.Soil_pH} onChange={handleChange} placeholder="5 - 8" />
                             <InputField label="Temperature (°C)" name="Temperature" type="number" step="0.1" value={formData.Temperature} onChange={handleChange} placeholder="15 - 35" icon={<Thermometer className="w-5 h-5 text-gray-400" />} />
                             <InputField label="Humidity (%)" name="Humidity" type="number" step="0.1" value={formData.Humidity} onChange={handleChange} placeholder="40 - 90" icon={<Droplets className="w-5 h-5 text-gray-400" />} />
                             <InputField label="Wind Speed (km/h)" name="Wind_Speed" type="number" step="0.1" value={formData.Wind_Speed} onChange={handleChange} placeholder="0 - 50" icon={<Wind className="w-5 h-5 text-gray-400" />} />
 
-                            <InputField label="Nitrogen (N)" name="N" type="number" step="0.1" value={formData.N} onChange={handleChange} placeholder="Nitrogen content" />
-                            <InputField label="Phosphorus (P)" name="P" type="number" step="0.1" value={formData.P} onChange={handleChange} placeholder="Phosphorus content" />
-                            <InputField label="Potassium (K)" name="K" type="number" step="0.1" value={formData.K} onChange={handleChange} placeholder="Potassium content" />
-                            <InputField label="Soil Quality" name="Soil_Quality" type="number" step="0.1" value={formData.Soil_Quality} onChange={handleChange} placeholder="Quality index" />
+                            <InputField label="Nitrogen (N)" name="N" type="number" step="0.1" value={formData.N} onChange={handleChange} placeholder="Nitrogen content (45-95)" />
+                            <InputField label="Phosphorus (P)" name="P" type="number" step="0.1" value={formData.P} onChange={handleChange} placeholder="Phosphorus content (35-75)" />
+                            <InputField label="Potassium (K)" name="K" type="number" step="0.1" value={formData.K} onChange={handleChange} placeholder="Potassium content (25-70)" />
+                            <InputField label="Soil Quality" name="Soil_Quality" type="number" step="0.1" value={formData.Soil_Quality} onChange={handleChange} placeholder="Quality index (10-75)" />
                         </div>
 
                         <button onClick={handleSubmit} disabled={loading} className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 rounded-lg shadow-lg disabled:opacity-50">
