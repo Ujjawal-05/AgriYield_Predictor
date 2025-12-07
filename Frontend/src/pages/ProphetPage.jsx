@@ -5,7 +5,7 @@ import InputField from '../components/InputField';
 export default function ProphetPage() {
   const [formData, setFormData] = useState({
     start_date: '',
-    periods: '30',
+    periods: '10',
     Soil_pH: '',
     Temperature: '',
     Humidity: '',
@@ -19,6 +19,17 @@ export default function ProphetPage() {
   const [forecast, setForecast] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const fields = [
+  { name: 'Soil_pH', placeholder: 'e.g. 5-8' },
+  { name: 'Temperature', placeholder: 'Temperature in °C (12-35)' },
+  { name: 'Humidity', placeholder: 'Humidity in %' },
+  { name: 'Wind_Speed', placeholder: 'Wind speed in km/h (1-20)' },
+  { name: 'N', placeholder: 'Nitrogen value (N) (45-95)' },
+  { name: 'P', placeholder: 'Phosphorus value (P) (35-75)' },
+  { name: 'K', placeholder: 'Potassium value (K) (25-70)' },
+  { name: 'Soil_Quality', placeholder: 'Describe soil quality (10-75)' }
+];
 
   const handleChange = (e) => setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
@@ -69,8 +80,8 @@ export default function ProphetPage() {
             <div className="border-t pt-6">
               <h3 className="text-lg font-semibold text-gray-800 mb-4">Environmental Conditions</h3>
               <div className="grid md:grid-cols-2 gap-6">
-                {['Soil_pH','Temperature','Humidity','Wind_Speed','N','P','K','Soil_Quality'].map((key) => (
-                  <InputField key={key} label={key} name={key} value={formData[key]} onChange={handleChange} />
+                {fields.map((field) => (
+                  <InputField key={field.name} label={field.name} name={field.name} value={formData[field.name]} placeholder={field.placeholder} onChange={handleChange} />
                 ))}
               </div>
             </div>
